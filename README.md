@@ -1,4 +1,4 @@
-    public static void main(String[] args) {
+ public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
        //1.Write a program that prints the numbers from 1 to 100 such that:
@@ -63,19 +63,26 @@
 
        //6.Write a program that reads a set of integers, and then prints the sum of the even and odd integers.
         System.out.println("Q6");
-        System.out.println("Please Enter Number");
-        int numE=s.nextInt();
+       
         int even=0;
         int odd=0;
-        for(int i=1;i<=numE;i++){
-            if(i%2==0){
-                even+=i;
+        while (true) {
+            System.out.println("Run Y/N");
+            s.nextLine();
+            String ans = s.nextLine();
+            if (ans.equalsIgnoreCase("y")) {
+                System.out.println("Enter the number");
+                int nx = s.nextInt();
+                if (nx % 2 == 0) {
+                    even += nx;
+                } else {
+                    odd += nx;
+                }
+            } else {
+                break;
             }
-            else{
-                odd+=i;
-            }
-
         }
+
         System.out.println("The Number even is "+even +" And odd is "+odd);
 
         //7.Write a program that prompts the user to input a positive integer. It should then output a message indicating whether the number is a prime number.
